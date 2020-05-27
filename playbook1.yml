@@ -1,0 +1,12 @@
+[
+ {
+   "name": "Testing ",
+   "hosts": "ansiblenode1",
+   "tasks": [
+     {
+       "name": "Output a message",
+       "debug": "msg={{ inventory_hostname }}",
+     }
+   ]
+ }
+]
