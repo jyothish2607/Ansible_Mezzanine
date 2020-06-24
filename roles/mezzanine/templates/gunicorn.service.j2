@@ -1,0 +1,18 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User={{ mezzanine_user }}
+Group={{ mezzanine_group }}
+WorkingDirectory={{ mezzanine_proj_path }}
+ExecStart={{ mezzanine_gunicorn_exec }} \
+          --access-logfile - \
+          --workers {{ mezzanine_num_workers }} \
+          --bind unix:{{ mezzanine_gunicorn_socket }} \
+          {{ mezzanine_proj_name }}.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+

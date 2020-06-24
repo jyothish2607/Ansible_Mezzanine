@@ -1,0 +1,24 @@
+user: ansible
+proj_app: mezzanine_example
+proj_name: mezzanine_example
+venv_home: /home/ansible/.virtualenvs
+venv_path: /home/ansible/.virtualenvs/mezzanine_example
+proj_path: /home/ansible/mezzanine/mezzanine_example
+settings_path: /home/ansible/mezzanine/mezzanine_example/mezzanine_example
+reqs_path: requirements.txt
+manage: /home/ansible/.virtualenvs/mezzanine_example/bin/python /home/ansible/mezzanine/mezzanine_example/manage.py
+domains:
+    - ansiblenode1.example.com
+    - www.ansiblenode1.example.com
+repo_url: https://github.com/ansiblebook/mezzanine_example
+locale: en_US.UTF-8
+conf_path: /etc/nginx.conf
+tls_enabled: True
+python: /home/ansible/.virtualenvs/mezzanine_example/bin/python
+database_name: mezzanine_example
+database_user: mezzanine_example
+database_host: localhost
+database_port: 5432
+gunicorn_procname: gunicorn_mezzanine
+num_workers: "multiprocessing.cpu_count() * 2 + 1"
+

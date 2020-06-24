@@ -1,0 +1,14 @@
+---
+# handlers file for mezzanine
+- name: restart supervisor
+  supervisorctl: "name={{ mezzanine_gunicorn_procname }} state=restarted"
+  become: True
+- name: restart nginx
+  service: name=nginx state=restarted
+  become: True
+- name: restart gunicorn_socket
+  systemd: name=gunicorn.socket state=restarted
+  become: True
+- name: restart gunicorn_service
+  systemd: name=gunicorn.service state=restarted daemon_reload=yes
+  become: True

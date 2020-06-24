@@ -1,1 +1,5 @@
-ansiblenode1
+[db]
+ansiblenode2.example.com
+
+[web]
+ansiblenode3.example.com
